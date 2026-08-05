@@ -1,6 +1,6 @@
 <div align="center">
 
-# ✋ GestureFlow — Touchless Presentation & Media Controller
+# GestureFlow — Touchless Presentation & Media Controller
 
 ### Real-Time Hand Gesture Recognition Pipeline Comparing Classical Computer Vision and Deep Learning
 
@@ -22,7 +22,7 @@
 
 ---
 
-## 📌 Table of Contents
+##  Table of Contents
 
 - [Banner Concept](#-banner-concept)
 - [Project Overview](#-project-overview)
@@ -40,29 +40,12 @@
 - [Usage](#-usage)
 - [Future Improvements](#-future-improvements)
 - [Contributing](#-contributing)
-- [License](#-license)
 - [Acknowledgements](#-acknowledgements)
 
 ---
 
-## 🎨 Banner Concept
 
-**Layout:** Wide 1600×400 hero banner, dark charcoal (`#0D1117`, GitHub-dark-matching) background with a subtle grid/circuit texture.
-
-**Typography:** Bold, geometric sans-serif (e.g., *Space Grotesk* or *Inter Extrabold*) for "GestureFlow" in white, with the tagline in a lighter gray monospace font underneath (e.g., *JetBrains Mono*) to signal "engineering-grade."
-
-**Colors:** Charcoal background · Electric blue (`#58A6FF`) and warm orange (`#FF6F00`) accents representing "classical CV" vs "deep learning" duality · White primary text.
-
-**Graphics/Icons:** A stylized open hand silhouette on the right, overlaid with a translucent bounding box and skeletal keypoint dots (referencing MediaPipe/YOLO-style hand landmarks). To the left, a faint flow of small icons — camera → CV filter grid → neural network nodes → keyboard/cursor — implying the full pipeline in one glance.
-
-**Visual Hierarchy:** Title (largest, top-left) → tagline (medium, directly below) → hand + pipeline graphic (right half, largest visual anchor) → three small badges/pills along the bottom edge reading "Classical CV," "Deep Learning," "Real-Time Control."
-
-**AI Image Generation Prompt:**
-> "A sleek, modern tech banner for a GitHub repository, 1600x400px, dark charcoal background with subtle circuit-board texture, bold white geometric sans-serif title text on the left, a minimalist glowing blue hand silhouette with white keypoint dots and a translucent bounding box on the right, small icon flow between a webcam icon and a neural network icon in the center, electric blue and warm orange accent colors, professional software engineering aesthetic, high contrast, flat vector illustration style, no text errors."
-
----
-
-## 🧠 Project Overview
+##  Project Overview
 
 Standard presentation and media control still depends on a mouse, remote, or keyboard — a friction point in classrooms, demos, sterile environments (labs, clean rooms), and accessibility-constrained settings.
 
@@ -77,25 +60,25 @@ The project was built as more than an application: it's a **comparative research
 
 ---
 
-## 🎬 Demo
+##  Demo
 
 The application demonstrates real-time gesture recognition controlling slide navigation, media playback, and screen zoom via webcam — no additional hardware required.
 
 ---
 
-## ⭐ Key Features
+##  Key Features
 
 <table>
 <tr>
 <td width="50%">
 
-### 🖐️ 9-Gesture Recognition
+###  9-Gesture Recognition
 Recognizes `call`, `stop`, `fist`, `thumbs_up`, `thumbs_down`, `two_up`, `two_down`, `rock`, and `ok` — each mapped to a distinct presentation or media command.
 
 </td>
 <td width="50%">
 
-### 🧪 Three-Tier Vision Pipeline
+###  Three-Tier Vision Pipeline
 Classical image restoration → handcrafted-feature ML (SIFT/HOG/SVM) → deep learning (MobileNetV2/YOLOv8), scientifically benchmarked against each other.
 
 </td>
@@ -103,13 +86,13 @@ Classical image restoration → handcrafted-feature ML (SIFT/HOG/SVM) → deep l
 <tr>
 <td width="50%">
 
-### ⚡ Real-Time Performance
+###  Real-Time Performance
 YOLOv8n inference at **8ms (125 FPS)**; MobileNetV2 optimized to **35 FPS** on CPU via TensorRT FP16 conversion.
 
 </td>
 <td width="50%">
 
-### 🔍 Explainable AI
+###  Explainable AI
 Grad-CAM heatmaps validate that the model attends to the hand/palm region, not background artifacts — confirmed in 90%+ of samples.
 
 </td>
@@ -117,13 +100,13 @@ Grad-CAM heatmaps validate that the model attends to the hand/palm region, not b
 <tr>
 <td width="50%">
 
-### 🎚️ Smooth, Debounced Zoom
+###  Smooth, Debounced Zoom
 Zoom steps in 25% increments (up to 400%) with a 0.5-second cooldown to prevent flooding and ensure smooth, stable control.
 
 </td>
 <td width="50%">
 
-### 🛡️ Noise-Robust Preprocessing
+###  Noise-Robust Preprocessing
 Adaptive denoising (Median, Bilateral, Non-Local Means) applied dynamically based on real-time lighting/noise conditions.
 
 </td>
@@ -132,11 +115,11 @@ Adaptive denoising (Median, Bilateral, Non-Local Means) applied dynamically base
 
 ---
 
-## 🏗️ System Architecture
+##  System Architecture
 
 ```mermaid
 graph TD
-    A[📷 Webcam Input] --> B[Module 1: Image Preprocessing & Restoration]
+    A[ Webcam Input] --> B[Module 1: Image Preprocessing & Restoration]
     B --> C{Noise / Quality Check}
     C -->|Denoised Frame| D[Module 2: Classical Feature Pipeline]
     C -->|Denoised Frame| E[Module 3: Deep Learning Pipeline]
@@ -159,12 +142,12 @@ graph TD
 
     F --> G[Command Mapper]
     G --> H[PyAutoGUI / keyboard]
-    H --> I[🖥️ PPT / VLC / Screen Zoom Control]
+    H --> I[ PPT / VLC / Screen Zoom Control]
 ```
 
 ---
 
-## 🔄 Project Workflow
+##  Project Workflow
 
 ```mermaid
 flowchart LR
@@ -181,7 +164,7 @@ flowchart LR
 
 ---
 
-## 📂 Repository Structure
+##  Repository Structure
 
 ```
 gestureflow/
@@ -229,7 +212,7 @@ gestureflow/
 
 ---
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 <table>
 <tr><th>Category</th><th>Technologies</th></tr>
@@ -246,7 +229,7 @@ gestureflow/
 
 ---
 
-## 🧩 Implementation Details
+## Implementation Details
 
 <details>
 <summary><b>1. Dataset Preparation</b></summary>
@@ -300,7 +283,7 @@ gestureflow/
 
 ---
 
-## 🤖 AI / CV Models
+##  AI / CV Models
 
 | Model | Purpose | Advantages | Limitations | Accuracy / mAP | Inference Speed |
 |---|---|---|---|---|---|
@@ -313,34 +296,34 @@ gestureflow/
 
 ---
 
-## 📊 Results
+##  Results
 
-### 🏆 Model Performance Comparison
+###  Model Performance Comparison
 
 | Method | Category | Accuracy / mAP | Inference Speed |
 |---|---|---|---|
 | HOG + SVM | Classical ML | 84.2% | 25 ms |
 | HOG + LBP + SIFT + SVM (Fusion) | Classical ML | 86.5% | 42 ms |
 | Custom CNN (Scratch) | Deep Learning | 91.3% | 18 ms |
-| **🥇 MobileNetV2 (Fine-tuned)** | **Deep Learning** | **95.8%** | 12 ms |
+| ** MobileNetV2 (Fine-tuned)** | **Deep Learning** | **95.8%** | 12 ms |
 | EfficientNetB0 | Deep Learning | 95.1% | 15 ms |
-| **⚡ YOLOv8n** | Object Detection | 94.5% (mAP) | **8 ms (Fastest)** |
+| ** YOLOv8n** | Object Detection | 94.5% (mAP) | **8 ms (Fastest)** |
 
 > **Best overall accuracy:** MobileNetV2 (95.8%) · **Best speed:** YOLOv8n (8ms / 125 FPS)
 
-### 🔬 Research Hypotheses — Validated
+###  Research Hypotheses — Validated
 
 | # | Hypothesis | Result |
 |---|---|---|
-| H1 | Noise degrades classical features | ✅ Confirmed — Gaussian noise (σ>20) reduced SIFT repeatability by 30% |
-| H2 | Median filtering restores classical accuracy | ✅ Confirmed — +12% accuracy (74% → 86%) after 5×5 median filtering |
-| H3 | Deep learning outperforms classical methods | ✅ Confirmed — MobileNetV2 beat SVM by 11.6% (95.8% vs. 84.2%) |
-| H4 | YOLO handles background clutter better | ✅ Confirmed — YOLOv8 (94.5% mAP) outperformed classification (91.2%) in cluttered scenes |
-| H5 | Grad-CAM confirms correct model focus | ✅ Confirmed — 90%+ of heatmap attention fell within the gesture bounding box |
+| H1 | Noise degrades classical features | Confirmed — Gaussian noise (σ>20) reduced SIFT repeatability by 30% |
+| H2 | Median filtering restores classical accuracy |  Confirmed — +12% accuracy (74% → 86%) after 5×5 median filtering |
+| H3 | Deep learning outperforms classical methods |  Confirmed — MobileNetV2 beat SVM by 11.6% (95.8% vs. 84.2%) |
+| H4 | YOLO handles background clutter better |  Confirmed — YOLOv8 (94.5% mAP) outperformed classification (91.2%) in cluttered scenes |
+| H5 | Grad-CAM confirms correct model focus |  Confirmed — 90%+ of heatmap attention fell within the gesture bounding box |
 
 ---
 
-## 🧗 Challenges & Solutions
+##  Challenges & Solutions
 
 | Challenge | Solution |
 |---|---|
@@ -350,9 +333,9 @@ gestureflow/
 
 ---
 
-## ⚙️ Installation
+##  Installation
 
-> ⚠️ Exact commands were not specified in the source project documentation. The steps below follow a standard Python project layout — replace placeholders with your actual entry points once finalized.
+>  Exact commands were not specified in the source project documentation. The steps below follow a standard Python project layout — replace placeholders with your actual entry points once finalized.
 
 ```bash
 # 1. Clone the repository
@@ -372,7 +355,7 @@ python app/main.py
 
 ---
 
-## 🚀 Usage
+##  Usage
 
 1. **Input:** Launch the app; the webcam feed is captured continuously.
 2. **Processing:** Each frame is preprocessed (noise reduction, normalization) via Module 1, then routed to the selected classifier (Module 2 or Module 3).
@@ -381,7 +364,7 @@ python app/main.py
 
 ---
 
-## 🔮 Future Improvements
+##  Future Improvements
 
 > The following are proposed extensions and are **not** part of the current implementation:
 
@@ -393,7 +376,7 @@ python app/main.py
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions are welcome and appreciated!
 
@@ -407,32 +390,9 @@ Please open an issue first for major changes to discuss what you'd like to modif
 
 ---
 
-## 📄 License
 
-This project is licensed under the **MIT License**.
 
-```
-MIT License
-
-Copyright (c) 2026 <Your Name>
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-```
-
----
-
-## 🙏 Acknowledgements
+##  Acknowledgements
 
 - [HaGRID Dataset](https://github.com/hukenovs/hagrid) — Hand Gesture Recognition Image Dataset
 - [PyTorch](https://pytorch.org/) — Deep learning framework
